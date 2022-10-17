@@ -36,7 +36,7 @@ _start:
 	bge t3, s0, end
 		loop1: and t4, x0, x0
 			loop2: and t5, x0, x0
-				   add s7,x0,x0
+				   add s7,x0,x0			# Making temp summation register to zero
 				loop3: lb s4, 0x0(t0)		# loading element from matrix_ia
 					 lb s5, 0x0(t1)		# loading element from matrix_ib
 					 mul s6, s4, s5		# multiplying s4 & s5
