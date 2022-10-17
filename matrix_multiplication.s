@@ -31,7 +31,7 @@ _start:
 	la t2, matrix_op					# loads base address of matrix_op
 	la t6, matrix_ib					# loads base address of matrix_ib
 
-	bne s1, s2, end					# check condition: columns(matrix_ia) != rows(matrix_ib) => goto error label
+	bne s1, s2, prompt					# check condition: columns(matrix_ia) != rows(matrix_ib) => goto prompt label
 	
 	bge t3, s0, end
 		loop1: and t4, x0, x0
@@ -57,6 +57,6 @@ _start:
 			blt t3, s0, loop1				# looping
 		jal end
 
-#prompt: .ascii "Matrix Multiplication is not possible"
+prompt: .ascii "Matrix Multiplication is not possible"
 
 end: nop
